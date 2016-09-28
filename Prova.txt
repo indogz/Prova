@@ -1,0 +1,188 @@
+
+Matteo@DESKTOP-2ENBG1T MINGW64 ~
+$ clear
+
+Matteo@DESKTOP-2ENBG1T MINGW64 ~
+$ mkdir myProject
+
+Matteo@DESKTOP-2ENBG1T MINGW64 ~
+$ git init
+Initialized empty Git repository in C:/Users/Matteo/.git/
+
+Matteo@DESKTOP-2ENBG1T MINGW64 ~ (master)
+$ cd myProject
+
+Matteo@DESKTOP-2ENBG1T MINGW64 ~/myProject (master)
+$ ls -a
+./  ../
+
+Matteo@DESKTOP-2ENBG1T MINGW64 ~/myProject (master)
+$ git init
+Initialized empty Git repository in C:/Users/Matteo/myProject/.git/
+
+Matteo@DESKTOP-2ENBG1T MINGW64 ~/myProject (master)
+$ ls -a
+./  ../  .git/
+
+Matteo@DESKTOP-2ENBG1T MINGW64 ~/myProject (master)
+$ echo "test1" > test1.txt
+
+Matteo@DESKTOP-2ENBG1T MINGW64 ~/myProject (master)
+$ ls
+test1.txt
+
+Matteo@DESKTOP-2ENBG1T MINGW64 ~/myProject (master)
+$ git status
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        test1.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Matteo@DESKTOP-2ENBG1T MINGW64 ~/myProject (master)
+$ git add test1.txt
+warning: LF will be replaced by CRLF in test1.txt.
+The file will have its original line endings in your working directory.
+
+Matteo@DESKTOP-2ENBG1T MINGW64 ~/myProject (master)
+$ ^C
+
+Matteo@DESKTOP-2ENBG1T MINGW64 ~/myProject (master)
+$ git status
+On branch master
+
+Initial commit
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+        new file:   test1.txt
+
+
+Matteo@DESKTOP-2ENBG1T MINGW64 ~/myProject (master)
+$
+
+Matteo@DESKTOP-2ENBG1T MINGW64 ~/myProject (master)
+$ cdcd
+bash: cdcd: command not found
+
+Matteo@DESKTOP-2ENBG1T MINGW64 ~/myProject (master)
+$ commit -m "Primo commit"
+bash: commit: command not found
+
+Matteo@DESKTOP-2ENBG1T MINGW64 ~/myProject (master)
+$ git commit -m "Primo commit"
+[master (root-commit) cd92262] Primo commit
+ Committer: Matteo Incani <Matteo Incani>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 1 insertion(+)
+ create mode 100644 test1.txt
+
+Matteo@DESKTOP-2ENBG1T MINGW64 ~/myProject (master)
+$ git branch
+* master
+
+Matteo@DESKTOP-2ENBG1T MINGW64 ~/myProject (master)
+$ git branch new_branch
+
+Matteo@DESKTOP-2ENBG1T MINGW64 ~/myProject (master)
+$ git branch
+* master
+  new_branch
+
+Matteo@DESKTOP-2ENBG1T MINGW64 ~/myProject (master)
+$ git checkout new_branch
+Switched to branch 'new_branch'
+
+Matteo@DESKTOP-2ENBG1T MINGW64 ~/myProject (new_branch)
+$ git branch
+  master
+* new_branch
+
+Matteo@DESKTOP-2ENBG1T MINGW64 ~/myProject (new_branch)
+$ echo "test2" > test2.txt
+
+Matteo@DESKTOP-2ENBG1T MINGW64 ~/myProject (new_branch)
+$ ls -a
+./  ../  .git/  test1.txt  test2.txt
+
+Matteo@DESKTOP-2ENBG1T MINGW64 ~/myProject (new_branch)
+$ git status
+On branch new_branch
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        test2.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Matteo@DESKTOP-2ENBG1T MINGW64 ~/myProject (new_branch)
+$ git add test2.txt
+warning: LF will be replaced by CRLF in test2.txt.
+The file will have its original line endings in your working directory.
+
+Matteo@DESKTOP-2ENBG1T MINGW64 ~/myProject (new_branch)
+$ git status
+On branch new_branch
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   test2.txt
+
+
+Matteo@DESKTOP-2ENBG1T MINGW64 ~/myProject (new_branch)
+$ git commit -m "Primo commit  nel branch new_Branch"
+[new_branch 7d7859b] Primo commit  nel branch new_Branch
+ Committer: Matteo Incani <Matteo Incani>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 1 insertion(+)
+ create mode 100644 test2.txt
+
+Matteo@DESKTOP-2ENBG1T MINGW64 ~/myProject (new_branch)
+$ git status
+On branch new_branch
+nothing to commit, working tree clean
+
+Matteo@DESKTOP-2ENBG1T MINGW64 ~/myProject (new_branch)
+$ git log
+commit 7d7859b535bd0684b9259d11b933df15c52b1715
+Author: Matteo Incani <Matteo Incani>
+Date:   Tue Sep 27 08:48:10 2016 +0200
+
+    Primo commit  nel branch new_Branch
+
+commit cd9226296d640853924cc10aeab758c0d4104540
+Author: Matteo Incani <Matteo Incani>
+Date:   Tue Sep 27 08:41:11 2016 +0200
+
+    Primo commit
+
+Matteo@DESKTOP-2ENBG1T MINGW64 ~/myProject (new_branch)
+$
