@@ -37,8 +37,8 @@ public class ActivityThree extends AppCompatActivity {
                 result.setText(getResult());
 
                 Intent i = new Intent();
-                i.putExtra("isOk",  getResult());
-                ActivityThree.this.setResult(RESULT_OK, i);
+                i.putExtra("status", getResult());
+               setResult(RESULT_OK, i);
                 ActivityThree.this.finish();
             }
         });
@@ -46,15 +46,15 @@ public class ActivityThree extends AppCompatActivity {
 
     public String getResult() {
         String res;
-        if (risposteCorrette.equals(risposteDate)) res = "Test corretto";
-        else res = "Test errato";
+        if (risposteCorrette.equals(risposteDate)) res = "Test facile  corretto";
+        else res = "Test facile errato";
         return res;
 
     }
 
 
     public void onRadioButtonClicked(View view) {
-        // Is the button now checked?
+
         boolean checked = ((RadioButton) view).isChecked();
         RadioGroup myRadioGroup = (RadioGroup) findViewById(R.id.yourRadioGroup);
         //int index = myRadioGroup.indexOfChild(findViewById(myRadioGroup.getCheckedRadioButtonId()));

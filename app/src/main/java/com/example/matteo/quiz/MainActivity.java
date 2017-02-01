@@ -29,9 +29,10 @@ public class MainActivity extends AppCompatActivity {
         btnQuizFacile.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Intent i = new Intent(MainActivity.this, ActivityThree.class);
-                startActivity(i);
+
                 Toast toast = Toast.makeText(context, "BTNFACILE", duration);
                 toast.show();
+                startActivityForResult(i, ACTIVITY_TWO);
             }
         });
 
@@ -51,22 +52,15 @@ public class MainActivity extends AppCompatActivity {
     public void onActivityResult(int requestCode,
                                  int resultCode, Intent data) {
         TextView res = (TextView) findViewById(R.id.mainResult);
-        // check if the request code is 1 (we came from 1 ... )
-
-        if (requestCode == ACTIVITY_TWO) {
-            //---if the result is OK---
-            if (resultCode == RESULT_OK) {
-                // data passed in using getStringExtra() via Intent data
-                res.setText(data.getStringExtra("isOK"));
-            }
 
 
-            }
+
+        res.setText(data.getStringExtra("status"));
 
 
         if (requestCode == ACTIVITY_THREE) {
             if (resultCode == RESULT_OK) {
-                Toast.makeText(this, data.getStringExtra("isOK"),
+                Toast.makeText(this, data.getStringExtra("isOk"),
                         Toast.LENGTH_SHORT).show();
             }
         }

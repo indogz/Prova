@@ -40,8 +40,8 @@ public class ActivityTwo extends AppCompatActivity {
                 result.setText(getResult());
 
                 Intent i = new Intent();
-                i.putExtra("isOk", getResult());
-                ActivityTwo.this.setResult(RESULT_OK, i);
+                i.putExtra("status", getResult());
+                setResult(RESULT_OK, i);
                 ActivityTwo.this.finish();
             }
         });
@@ -49,8 +49,8 @@ public class ActivityTwo extends AppCompatActivity {
 
     public String getResult() {
         String res;
-        if (risposteCorrette.equals(risposteDate)) res = "Test corretto";
-        else res = "Test errato";
+        if (risposteCorrette.equals(risposteDate)) res = "Test difficile corretto";
+        else res = "Test difficile errato";
         return res;
 
     }
